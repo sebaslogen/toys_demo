@@ -8,6 +8,10 @@ class ToysHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Toys Home"),
         ),
-        body: Center(child: Text("Hola mundo")));
+        body: Center(
+            child: Text(
+          "Hola mundo",
+          style: Theme.of(context).textTheme.title,
+        )));
   }
 }
