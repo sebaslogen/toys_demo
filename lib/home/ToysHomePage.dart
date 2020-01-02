@@ -9,9 +9,17 @@ class ToysHomePage extends StatelessWidget {
           title: Text("Toys Home"),
         ),
         body: Center(
-            child: Text(
-          "Hola mundo",
-          style: Theme.of(context).textTheme.title,
+            child: Container(
+          decoration: BoxDecoration(
+              color: Colors.lightBlueAccent,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(10),
+                  bottomRight: Radius.circular(10))),
+          padding: EdgeInsets.all(10),
+          child: Text(
+            "Hola mundo",
+            style: Theme.of(context).textTheme.title,
+          ),
         )));
   }
 }
