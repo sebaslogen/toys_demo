@@ -14,9 +14,18 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.orangeAccent,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
+              display1: const TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 28,
+                  color: Colors.lightBlueAccent,
+                  fontWeight: FontWeight.bold),
               title: const TextStyle(
                   fontFamily: 'Quicksand',
                   fontSize: 18,
+                  fontWeight: FontWeight.bold),
+              caption: const TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 14,
                   fontWeight: FontWeight.bold),
               button: TextStyle(color: Colors.white)),
           appBarTheme: AppBarTheme(
