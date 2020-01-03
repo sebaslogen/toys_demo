@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'AdaptiveButton.dart';
+
 class AdaptiveDialog extends StatelessWidget {
   const AdaptiveDialog({
     Key key,
@@ -17,15 +19,13 @@ class AdaptiveDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final okText = 'Okay';
+    final action = () => Navigator.of(context).pop();
     if (Platform.isIOS) {
       return CupertinoAlertDialog(
         title: Text(title),
         content: Text(message),
         actions: <Widget>[
-          CupertinoButton(
-            child: Text(okText),
-            onPressed: () => Navigator.of(context).pop(),
-          )
+          AdaptiveButton(text: okText, action: action),
         ],
       );
     } else {
@@ -33,10 +33,7 @@ class AdaptiveDialog extends StatelessWidget {
         title: Text(title),
         content: Text(message),
         actions: <Widget>[
-          FlatButton(
-            child: Text(okText),
-            onPressed: () => Navigator.of(context).pop(),
-          )
+          AdaptiveButton(text: okText, action: action),
         ],
       );
     }
