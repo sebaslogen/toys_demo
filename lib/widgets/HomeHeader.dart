@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'AdaptiveDialog.dart';
+
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
     Key key,
@@ -29,17 +31,8 @@ class HomeHeader extends StatelessWidget {
   }
 
   void _showDialog(BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (ctx) => AlertDialog(
-              title: Text('Shopping cart'),
-              content: Text('Your shopping cart is empty'),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('Okay'),
-              onPressed: () => Navigator.of(ctx).pop(),
-            )
-          ],
-            ));
+    final title = 'Shopping cart';
+    final message = 'Your shopping cart is empty';
+    showDialog(context: context, builder: (ctx) => AdaptiveDialog(title: title, message: message));
   }
 }
