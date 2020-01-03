@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:toys_demo/widgets/ClickableColor.dart';
 
 import '../widgets/SearchBox.dart';
 
@@ -24,7 +25,7 @@ class ToysHomePage extends StatelessWidget {
                   SizedBox(height: 20),
                   SearchBox(),
                   SizedBox(height: 20),
-                  Container(height: 300, color: Colors.purple),
+                  ClickableColor(),
                   SizedBox(height: 20),
                   Container(height: 400, color: Colors.orange),
                   SizedBox(height: 20),
