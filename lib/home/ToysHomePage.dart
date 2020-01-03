@@ -10,20 +10,24 @@ class ToysHomePage extends StatelessWidget {
         body: SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              "Discover this year's hottest toys",
-              style: Theme.of(context).textTheme.display1,
-            ),
-            SizedBox(height: 20,),
-            SearchBox(),
-            SizedBox(height: 20,),
-            Container(height: 300, color: Colors.purple,),
-            SizedBox(height: 20,),
-            Container(height: 400, color: Colors.orange,),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                "Discover this year's hottest toys",
+                style: Theme.of(context).textTheme.display1,
+              ),
+              SizedBox(height: 20,),
+              SearchBox(),
+              SizedBox(height: 20,),
+              Container(height: 300, color: Colors.purple,),
+              SizedBox(height: 20,),
+              Container(height: 400, color: Colors.orange,),
+              SizedBox(height: 20,),
+              Container(height: 300, color: Colors.blue,),
+            ],
+          ),
         ),
       ),
     ));
