@@ -20,8 +20,7 @@ class ToysHomePage extends StatelessWidget {
                 children: <Widget>[
                   HomeHeader(),
                   SizedBox(height: 20),
-                  Text("Discover this year's hottest toys",
-                      style: Theme.of(context).textTheme.display1),
+                  Text("Discover this year's hottest toys", style: Theme.of(context).textTheme.display1),
                   SizedBox(height: 20),
                   SearchBox(),
                   SizedBox(height: 20),
@@ -47,33 +46,20 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.orange, borderRadius: BorderRadius.circular(8)),
-          child: CachedNetworkImage(
+    return ListTile(
+      contentPadding: EdgeInsets.all(0),
+      leading: Container(
+        decoration: BoxDecoration(color: Colors.orange, borderRadius: BorderRadius.circular(8)),
+        child: CachedNetworkImage(
             width: 55,
             height: 55,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
-            imageUrl:
-                'https://www.nintendonyc.com/_ui/img/nbassadors/miis/Carlos_Ortiz_Mii_Web.png',
-          ),
-        ),
-        SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('Sebas LG', style: Theme.of(context).textTheme.title),
-              Text('Premium customer',
-                  style: Theme.of(context).textTheme.caption)
-            ],
-          ),
-        ),
-        Icon(Icons.shopping_cart)
-      ],
+            imageUrl: 'https://www.nintendonyc.com/_ui/img/nbassadors/miis/Carlos_Ortiz_Mii_Web.png'),
+      ),
+      title: Text('Sebas LG', style: Theme.of(context).textTheme.title),
+      subtitle: Text('Premium customer', style: Theme.of(context).textTheme.caption),
+      trailing: Icon(Icons.shopping_cart),
     );
   }
 }
@@ -89,8 +75,7 @@ class HomeBackground extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       fit: BoxFit.cover,
-      imageUrl:
-          'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
+      imageUrl: 'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
     );
   }
 }
