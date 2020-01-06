@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 class Toy {
   final String name;
   final String description;
-  final String imageUrl;
+  final String imageName;
   final int hexColorBackground; // Like 0xFFFFFFFF
   final double price;
   final int popularityRank;
@@ -11,7 +11,7 @@ class Toy {
   Toy(
       {@required this.name,
       @required this.description,
-      @required this.imageUrl,
+      @required this.imageName,
       @required this.hexColorBackground,
       @required this.price,
       @required this.popularityRank});
