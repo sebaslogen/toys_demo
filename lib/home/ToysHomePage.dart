@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,9 +16,9 @@ class ToysHomePage extends StatelessWidget {
       children: <Widget>[
         HomeBackground(),
         SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -48,11 +50,19 @@ class HomeBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      width: double.infinity,
-      height: double.infinity,
-      fit: BoxFit.cover,
-      imageUrl: 'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
+    return Stack(
+      children: <Widget>[
+        CachedNetworkImage(
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.cover,
+          imageUrl: 'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
+        ),
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+          child: Container(color: Colors.black.withOpacity(0)),
+        ),
+      ],
     );
   }
 }
