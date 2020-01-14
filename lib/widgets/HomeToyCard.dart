@@ -13,18 +13,25 @@ class HomeToyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var color = Color(toyData.hexColorBackground);
+    var hexColor = toyData.hexColorBackground;
+    final color = Color(hexColor);
+    final darkerColor =
+        Color(((hexColor & 0xFF7E7E7E) >> 1) | (hexColor & 0xFF808080));
     return Container(
         margin: EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 50),
         decoration: BoxDecoration(
-            color: color,
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [0.2, 0.8],
+                colors: [color, darkerColor]),
             borderRadius: BorderRadius.circular(15),
             boxShadow: [
               BoxShadow(
-                color: color,
+                color: darkerColor,
                 offset: Offset(0, 22.0),
                 blurRadius: 18.0,
-                spreadRadius: -8,
+                spreadRadius: -12,
               )
             ]),
         child: Padding(
