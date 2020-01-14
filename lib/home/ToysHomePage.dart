@@ -28,7 +28,7 @@ class ToysHomePage extends StatelessWidget {
               SearchBox(),
               SizedBox(height: 20),
               Container(
-                height: 340,
+                height: 350,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: toysData.length,

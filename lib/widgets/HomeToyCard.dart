@@ -36,21 +36,41 @@ class HomeToyCard extends StatelessWidget {
             ]),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              Image.asset("assets/images/${toyData.imageName}.png",
-                  width: 120, height: 200, alignment: Alignment.bottomCenter),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                toyData.name,
-                style: Theme.of(context)
-                    .textTheme
-                    .title
-                    .copyWith(color: Colors.white),
-              ),
-            ],
+          child: IntrinsicWidth(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      toyData.popularityRank.toString(),
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle
+                          .copyWith(color: Colors.white),
+                    ),
+                    SizedBox(width: 2),
+                    Icon(
+                      Icons.star,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 4),
+                Image.asset("assets/images/${toyData.imageName}.png",
+                    width: 120, height: 190, alignment: Alignment.bottomCenter),
+                SizedBox(height: 20),
+                Text(
+                  toyData.name,
+                  style: Theme.of(context)
+                      .textTheme
+                      .title
+                      .copyWith(color: Colors.white),
+                ),
+              ],
+            ),
           ),
         ));
   }
