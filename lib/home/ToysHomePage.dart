@@ -15,27 +15,28 @@ class ToysHomePage extends StatelessWidget {
       children: <Widget>[
         HomeBackground(),
         SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                HomeHeader(),
-                SizedBox(height: 20),
-                Text("Discover this year's hottest toys", style: Theme.of(context).textTheme.display1),
-                SizedBox(height: 20),
-                SearchBox(),
-                SizedBox(height: 20),
-                Expanded(
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: toysData.length,
-                      itemBuilder: (ctx, index) {
-                        return HomeToyCard(toyData: toysData[index]);
-                      }),
-                ),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              HomeHeader(),
+              SizedBox(height: 20),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text("Discover this year's hottest toys", style: Theme.of(context).textTheme.display1),
+              ),
+              SizedBox(height: 20),
+              SearchBox(),
+              SizedBox(height: 20),
+              Container(
+                height: 340,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: toysData.length,
+                    itemBuilder: (ctx, index) {
+                      return HomeToyCard(toyData: toysData[index]);
+                    }),
+              ),
+            ],
           ),
         )
       ],
