@@ -40,7 +40,12 @@ class MyApp extends StatelessWidget {
                   title: const TextStyle(
                       fontFamily: 'Quicksand',
                       fontSize: 28,
-                      fontWeight: FontWeight.bold)))),
+                      fontWeight: FontWeight.bold))),
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
+            TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          }),
+      ),
       home: ToysHomePage(),
       onGenerateRoute: (settings) {
         if (settings.name == ToyPage.routeName) {
