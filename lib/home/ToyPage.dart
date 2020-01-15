@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toys_demo/widgets/AdaptiveDialog.dart';
+import 'package:toys_demo/widgets/ToyImageHeader.dart';
+import 'package:toys_demo/widgets/ToyNavigationHeader.dart';
 
 import '../data.dart';
 
@@ -11,7 +13,6 @@ class ToyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.orangeAccent[200],
       body: SafeArea(
@@ -21,14 +22,7 @@ class ToyPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Hero(
-                      tag: toy.imageName,
-                      child: Image.asset("assets/images/${toy.imageName}.png",
-                          height: 300, alignment: Alignment.bottomCenter),
-                    ),
-                  ),
+                  ToyImageHeader(toy: toy),
                   Padding(
                     padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 4),
                     child: Text(
@@ -70,7 +64,11 @@ class ToyPage extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.all(18),
                       height: 50,
-                      child: Icon(Icons.shopping_cart, size: 40, color: Colors.purple,),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        size: 40,
+                        color: Colors.purple,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.orangeAccent[200],
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -92,38 +90,7 @@ class ToyPage extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-                  padding: EdgeInsets.all(0),
-                  icon: Container(
-                      padding: EdgeInsets.only(
-                        left: 14,
-                        right: 14,
-                        top: 8,
-                        bottom: 8,
-                      ),
-                      decoration: BoxDecoration(
-                          color: Colors.white30,
-                          borderRadius:
-                          BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10))),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 20,
-                      )),
-                  onPressed: Navigator.of(context).pop,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Icon(
-                    Icons.shopping_cart,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            )
+            ToyNavigationHeader()
           ],
         ),
       ),
