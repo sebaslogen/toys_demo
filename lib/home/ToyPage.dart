@@ -30,7 +30,7 @@ class ToyPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 4),
                     child: Text(
                       toy.name,
-                      style: Theme.of(context).textTheme.title.copyWith(color: Colors.white),
+                      style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white),
                     ),
                   ),
                   Padding(
@@ -53,11 +53,11 @@ class ToyPage extends StatelessWidget {
                         children: <Widget>[
                           Text('Ranking', style: Theme.of(context).textTheme.caption.copyWith(color: Colors.white)),
                           Text(toy.popularityRank.toString(),
-                              style: Theme.of(context).textTheme.title.copyWith(color: Colors.white)),
-                          SizedBox(height: 24),
+                              style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white)),
+                          SizedBox(height: 20),
                           Text('Price', style: Theme.of(context).textTheme.caption.copyWith(color: Colors.white)),
                           Text(toy.price.toString(),
-                              style: Theme.of(context).textTheme.title.copyWith(color: Colors.white)),
+                              style: Theme.of(context).textTheme.headline.copyWith(color: Colors.white)),
                         ],
                       ),
                     ),

@@ -17,6 +17,10 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.orangeAccent,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
+                headline: const TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
                 display1: const TextStyle(
                     fontFamily: 'Quicksand',
                     fontSize: 28,
