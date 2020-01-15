@@ -13,15 +13,18 @@ class HomeBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        CachedNetworkImage(
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.cover,
-          imageUrl: 'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
+        ColorFiltered(
+          colorFilter: ColorFilter.mode(Colors.orange, BlendMode.hue),
+          child: CachedNetworkImage(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+            imageUrl: 'https://cdn.pixabay.com/photo/2016/10/29/10/13/abstract-1780373_1280.png',
+          ),
         ),
         BackdropFilter(
+          child: Container(color: Colors.deepOrangeAccent.withOpacity(0.15)),
           filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: Container(color: Colors.black.withOpacity(0)),
         ),
       ],
     );
