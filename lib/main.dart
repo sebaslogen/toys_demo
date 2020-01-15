@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home/ToysHomePage.dart';
+import 'home/ToyPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
               ),
           appBarTheme: AppBarTheme(
               textTheme: ThemeData.light().textTheme.copyWith(title: const TextStyle(fontFamily: 'Quicksand', fontSize: 28, fontWeight: FontWeight.bold)))),
-      home: ToysHomePage(),
+      home: ToyPage(),
     );
   }
 }
