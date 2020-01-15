@@ -58,8 +58,11 @@ class HomeToyCard extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 4),
-                  Image.asset("assets/images/${toyData.imageName}.png",
-                      width: 120, height: 190, alignment: Alignment.bottomCenter),
+                  Hero(
+                    tag: toyData.imageName,
+                    child: Image.asset("assets/images/${toyData.imageName}.png",
+                        width: 120, height: 190, alignment: Alignment.bottomCenter),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     toyData.name,

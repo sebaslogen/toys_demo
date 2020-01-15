@@ -23,8 +23,11 @@ class ToyPage extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset("assets/images/${toy.imageName}.png",
-                        height: 300, alignment: Alignment.bottomCenter),
+                    child: Hero(
+                      tag: toy.imageName,
+                      child: Image.asset("assets/images/${toy.imageName}.png",
+                          height: 300, alignment: Alignment.bottomCenter),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 4),
