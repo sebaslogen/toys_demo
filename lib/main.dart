@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'data.dart';
 import 'home/ToyPage.dart';
+import 'home/ToysHomePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +37,24 @@ class MyApp extends StatelessWidget {
                       fontFamily: 'Quicksand',
                       fontSize: 28,
                       fontWeight: FontWeight.bold)))),
-      home: ToyPage(toy: toysData[0]),
+      home: ToysHomePage(),
+      onGenerateRoute: (settings) {
+        if (settings.name == ToyPage.routeName) {
+          // Cast the arguments to the correct type: ScreenArguments.
+          final Toy toy = settings.arguments;
+
+          // Then, extract the required data from the arguments and
+          // pass the data to the correct screen.
+          return MaterialPageRoute(
+            builder: (context) {
+              return ToyPage(
+                toy: toy,
+              );
+            },
+          );
+        }
+        return null;
+      },
     );
   }
 }
