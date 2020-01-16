@@ -24,28 +24,16 @@ class _ToyImageHeaderState extends State<ToyImageHeader> {
       padding: const EdgeInsets.all(8.0),
       child: Hero(
         tag: widget.toy.imageName,
-        child: ColorFiltered(
-          colorFilter: ColorFilter.mode(_tintColor, BlendMode.modulate),
-          child:
-              Image.asset("assets/images/${widget.toy.imageName}.png", height: 300, alignment: Alignment.bottomCenter),
-        ),
+        child: TweenAnimationBuilder(
+            tween: ColorTween(begin: Colors.white, end: Colors.red),
+            duration: Duration(seconds: 1),
+            builder: (_, Color color, __) {
+              return ColorFiltered(
+                colorFilter: ColorFilter.mode(color, BlendMode.modulate),
+                child: Image.asset("assets/images/${widget.toy.imageName}.png", height: 300, alignment: Alignment.bottomCenter),
+              );
+            }),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
