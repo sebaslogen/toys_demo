@@ -31,29 +31,31 @@ class ToysHomePage extends StatelessWidget {
           },
         ),
         SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              HomeHeader(),
-              SizedBox(height: 20),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text("Discover this year's hottest toys", style: Theme.of(context).textTheme.display1),
-              ),
-              SizedBox(height: 20),
-              SearchBox(),
-              SizedBox(height: 20),
-              Container(
-                height: 350,
-                child: ListView.builder(
-                    controller: scrollController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: toysData.length,
-                    itemBuilder: (ctx, index) {
-                      return HomeToyCard(toyData: toysData[index]);
-                    }),
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                HomeHeader(),
+                SizedBox(height: 20),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text("Discover this year's hottest toys", style: Theme.of(context).textTheme.display1),
+                ),
+                SizedBox(height: 20),
+                SearchBox(),
+                SizedBox(height: 20),
+                Container(
+                  height: 350,
+                  child: ListView.builder(
+                      controller: scrollController,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: toysData.length,
+                      itemBuilder: (ctx, index) {
+                        return HomeToyCard(toyData: toysData[index]);
+                      }),
+                ),
+              ],
+            ),
           ),
         )
       ],

@@ -16,7 +16,7 @@ class HomeToyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var hexColor = toyData.hexColorBackground;
     final color = Color(hexColor);
-    final darkerColor = Color(((hexColor & 0xFF7E7E7E) >> 1) | (hexColor & 0xFF808080));
+    final darkerColor = Color.lerp(Colors.black, color, 0.5);
     return Container(
         margin: EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 50),
         decoration: BoxDecoration(
