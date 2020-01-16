@@ -16,6 +16,7 @@ class ToyPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orangeAccent[200],
       body: SafeArea(
+        top: false,
         child: Stack(
           children: <Widget>[
             SingleChildScrollView(
