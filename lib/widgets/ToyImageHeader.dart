@@ -26,7 +26,7 @@ class _ToyImageHeaderState extends State<ToyImageHeader> {
         tag: widget.toy.imageName,
         child: TweenAnimationBuilder(
             tween: ColorTween(begin: Colors.white, end: Colors.red),
-            duration: Duration(seconds: 1),
+            duration: Duration(seconds: 2),
             builder: (_, Color color, __) {
               return ColorFiltered(
                 colorFilter: ColorFilter.mode(color, BlendMode.modulate),
